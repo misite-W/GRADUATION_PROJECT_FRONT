@@ -10,6 +10,11 @@ import forum from '../views/forum'
 import appointment from '../views/appointment'
 import specialist from '../views/specialist'
 import register from '../views/register'
+import newsDetail from '../views/newsDeatil'
+import knowledgeDetail from '../views/knowledgeDetail'
+import addKnowledge from "../views/addKnowledge";
+import addNews from "../views/addNews";
+import addForum from "../views/addForum";
 Vue.use(VueRouter)
 const routes = [
   {
@@ -34,12 +39,60 @@ const routes = [
     },
   },
   {
+    path:'/index/news/newsDetail',
+    name:'newsDetail',
+    component:newsDetail,
+    meta: {
+      requireAuth: true
+    },
+  },
+  {
+    path:'/index/news/addNews',
+    name:'addNews',
+    component:addNews,
+    meta:{
+      requireAuth:true
+    }
+  },
+  {
+    path:'/index/knowledge/knowledgeDetail',
+    name:'knowledgeDetail',
+    component:knowledgeDetail,
+    meta: {
+      requireAuth: true
+    },
+  },
+  {
+    path:'/index/knowledge/addKnowledge',
+    name:'addKnowledge',
+    component:addKnowledge,
+    meta:{
+      requireAuth:true
+    }
+  },
+  {
     path:'/index/knowledge',
     name:'knowledge',
     component:knowledge,
     meta: {
       requireAuth: true
     },
+  },
+  {
+    path:'/index/forum',
+    name:'forum',
+    component:forum,
+    meta:{
+      requireAuth:true
+    }
+  },
+  {
+    path:'/index/forum/addForum',
+    name:'addForum',
+    component:addForum,
+    meta:{
+      requireAuth:true
+    }
   },
   {
     path:'/index/test',
